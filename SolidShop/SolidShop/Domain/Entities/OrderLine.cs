@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SolidShop.Domain.Entities
 {
-    internal class OrderLine
+    public class OrderLine
     {
+        public Product Product { get; init; } = default!;
+        public int Quantity { get; init; }
+        public decimal LineTotal => Product.UniPrice*Quantity
     }
 }
