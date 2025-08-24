@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SolidShop.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace SolidShop.Domain.Contracts
 {
-    internal interface IDiscountPolicy
+    public interface IDiscountPolicy
     {
+        string Name { get;}
+        decimal CalculateDiscount(Order order);
     }
 }
