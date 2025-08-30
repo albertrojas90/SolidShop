@@ -10,6 +10,8 @@ namespace SolidShop.Domain.Contracts
     public interface IDiscountPolicy
     {
         string Name { get;}
+
+        decimal ApplyDiscount(Product product, int quantity);
         decimal CalculateDiscount(Order order);
     }
 }

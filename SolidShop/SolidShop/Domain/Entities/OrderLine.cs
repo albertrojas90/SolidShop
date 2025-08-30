@@ -10,6 +10,6 @@ namespace SolidShop.Domain.Entities
     {
         public Product Product { get; init; } = default!;
         public int Quantity { get; init; }
-        public decimal LineTotal => Product.UniPrice*Quantity
+        public decimal LineTotal => Product.UnitPrice * Quantity;
     }
 }

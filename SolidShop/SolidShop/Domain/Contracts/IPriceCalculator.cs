@@ -9,6 +9,8 @@ namespace SolidShop.Domain.Contracts
 {
     public interface IPriceCalculator
     {
-        (decimal subtotal, decimal discount, decimal total) Compute(Order order);
+        decimal CalculateTotal(Product product, int quantity);
     }
 }
+
+

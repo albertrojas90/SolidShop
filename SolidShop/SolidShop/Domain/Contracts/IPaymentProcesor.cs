@@ -1,4 +1,5 @@
-﻿using SolidShop.Domain.Entities;
+﻿using SolidShop.Domain.Contracts;
+using SolidShop.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace SolidShop.Domain.Contracts
     public record PaymentResult(bool Success, string AuthorizationCode, string Message);
     public interface IPaymentProcesor
     {
-        Task<PaymentResult> ProcessAsync(Order order, PaymentData data, CancellationToken ct = default);
+        Task<PaymentResult> ProcessPayment(Order order, decimal amount, string currency, CancellationToken ct);
     }
 }
+
